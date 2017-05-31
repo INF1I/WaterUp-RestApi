@@ -58,16 +58,7 @@ doctrine:
                     softdeleteable:
                         class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
                         enabled: true
-   # orm:
-      #  auto_generate_proxy_classes: '%kernel.debug%'
-        #naming_strategy: doctrine.orm.naming_strategy.underscore
-        #auto_mapping: true
-     #   entity_managers:
-      #      default:
-      #          filters:
-      #              softdeleteable:
-         #           class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
-         #           enabled: true
+
 stof_doctrine_extensions:
     default_locale: en_US
     # Only used if you activated the Uploadable extension
@@ -86,44 +77,6 @@ stof_doctrine_extensions:
             #blamable: true # Add doctrine Blamable extension for automatic updating values on create, delete, update and column value change events.
             #softdeleteable: true # Add SoftDeletable extension for setting records non active without deleting them from the database.
             #uploadable: true # Add Uploadable extension for saving uploads like plant pictures.
-
-#fos_oauth_server:
-#    db_driver: orm
-#    client_class:        StendenINF1I\WaterupRestApiBundle\Entity\Client
-#    access_token_class:  StendenINF1I\WaterupRestApiBundle\Entity\AccessToken
-#    refresh_token_class: StendenINF1I\WaterupRestApiBundle\Entity\RefreshToken
-#    auth_code_class:     StendenINF1I\WaterupRestApiBundle\Entity\AuthCode
-#    service:
-#        user_provider: fos_user.user_manager
-
-#fos_rest:
-#    disable_csrf_role: ROLE_API
-#    param_fetcher_listener: true
-#    body_listener: true
-#    allowed_methods_listener: true
-#    unauthorized_challenge: "Basic realm=\"Restricted Area\""
-#    access_denied_listener:
-#        json: true
-#        xml: true
-#        html: true
-#    view:
-#        view_response_listener: force
-#        force_redirects:
-#         html: true
-#        formats:
-#            json: true
-#            xml: true
-#    format_listener:
-#        rules:
-#            - { path: ^/, priorities: [ json, xml ], fallback_format: json, prefer_extension: true }
-
-#fos_user:
-#    db_driver: orm
-#    firewall_name: main
-#    user_class: StendenINF1I\WaterupRestApiBundle\Entity\Customer
-#    from_email:
-#        address: "noreply@inf1i.ga"
-#        sender_name: "No Reply"
 
 # Swiftmailer Configuration
 swiftmailer:

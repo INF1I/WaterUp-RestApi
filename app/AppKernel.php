@@ -15,15 +15,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-
+            // This bundle includes multiple doctrine plugins like blamable, timstampable
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            //new JMS\SerializerBundle\JMSSerializerBundle(),
-            //new FOS\RestBundle\FOSRestBundle(),
-            //new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
-            //new \FOS\UserBundle\FOSUserBundle(),
-            //new StendenINF1I\WaterupRestApiBundle\StendenINF1IWaterupRestApiBundle(),
+            // This bundle includes everything needed for Json Web Token authentication and authorization.
             new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
+            // This is the WaterUp rest bundle containing the web methods for communication with the database.
             new RestBundle\RestBundle(),
+            // This bundle includes an json serializer.
+            new \JMS\SerializerBundle\JMSSerializerBundle(),
+            // This bundle includes tools for generating api documentation.
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
