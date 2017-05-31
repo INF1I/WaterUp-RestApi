@@ -1,7 +1,11 @@
-stenden_inf1_i_waterup_rest_api:
-    resource: "@StendenINF1IWaterupRestApiBundle/Resources/config/routing.xml"
-    prefix: /
+rest:
+    resource: "@RestBundle/Resources/config/routing.yml"
+    prefix:   /
 
-greeting:
-    type:     rest
-    resource: StendenINF1I\WaterupRestApiBundle\Controller\GreetingController
+app_web:
+    resource: "@RestBundle/Controller/Web"
+    type:     annotation
+
+app_api:
+    resource: "@RestBundle/Controller/Api"
+    type: annotation

@@ -17,3 +17,6 @@
 /web/bundles/
 
 .idea/
+
+var/jwt/
+var/jwt/*

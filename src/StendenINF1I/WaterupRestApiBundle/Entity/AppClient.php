@@ -12,7 +12,7 @@ class AppClient extends AppClientBase
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * Get id

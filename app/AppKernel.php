@@ -17,12 +17,13 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle(),
-            new FOS\RestBundle\FOSRestBundle(),
+            //new JMS\SerializerBundle\JMSSerializerBundle(),
+            //new FOS\RestBundle\FOSRestBundle(),
             //new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
-
-            new StendenINF1I\WaterupRestApiBundle\StendenINF1IWaterupRestApiBundle(),
-
+            //new \FOS\UserBundle\FOSUserBundle(),
+            //new StendenINF1I\WaterupRestApiBundle\StendenINF1IWaterupRestApiBundle(),
+            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
+            new RestBundle\RestBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

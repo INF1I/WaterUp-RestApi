@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@RestBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -95,26 +96,34 @@ stof_doctrine_extensions:
 #    service:
 #        user_provider: fos_user.user_manager
 
-fos_rest:
-    disable_csrf_role: ROLE_API
-    param_fetcher_listener: true
-    body_listener: true
-    allowed_methods_listener: true
-    unauthorized_challenge: "Basic realm=\"Restricted Area\""
-    access_denied_listener:
-        json: true
-        xml: true
-        html: true
-    view:
-        view_response_listener: force
-        force_redirects:
-          html: true
-        formats:
-            json: true
-            xml: true
-    format_listener:
-        rules:
-            - { path: ^/, priorities: [ json, xml ], fallback_format: json, prefer_extension: true }
+#fos_rest:
+#    disable_csrf_role: ROLE_API
+#    param_fetcher_listener: true
+#    body_listener: true
+#    allowed_methods_listener: true
+#    unauthorized_challenge: "Basic realm=\"Restricted Area\""
+#    access_denied_listener:
+#        json: true
+#        xml: true
+#        html: true
+#    view:
+#        view_response_listener: force
+#        force_redirects:
+#         html: true
+#        formats:
+#            json: true
+#            xml: true
+#    format_listener:
+#        rules:
+#            - { path: ^/, priorities: [ json, xml ], fallback_format: json, prefer_extension: true }
+
+#fos_user:
+#    db_driver: orm
+#    firewall_name: main
+#    user_class: StendenINF1I\WaterupRestApiBundle\Entity\Customer
+#    from_email:
+#        address: "noreply@inf1i.ga"
+#        sender_name: "No Reply"
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -123,4 +132,10 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
-# app/config/config.yml
+
+# JSON web tokens authentication bundle configuration for secure authorization of API resources.sy
+#lexik_jwt_authentication:
+#    private_key_path: %jwt_private_key_path%
+#    public_key_path:  %jwt_public_key_path%
+#    pass_phrase:      %jwt_key_pass_phrase%
+#    token_ttl:        %jwt_token_ttl%
