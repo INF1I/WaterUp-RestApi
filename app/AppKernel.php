@@ -15,8 +15,13 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new StendenINF1I\WaterupRestApiBundle\StendenINF1IWaterupRestApiBundle(),
+
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            //new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+
+            new StendenINF1I\WaterupRestApiBundle\StendenINF1IWaterupRestApiBundle(),
 
         ];
 

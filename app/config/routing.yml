@@ -1,13 +1,7 @@
 stenden_inf1_i_waterup_rest_api:
     resource: "@StendenINF1IWaterupRestApiBundle/Resources/config/routing.xml"
-    prefix:   /
+    prefix: /
 
-NelmioApiDocBundle:
-    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:   /api/doc
-
-fos_oauth_server_token:
-    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
-
-fos_oauth_server_authorize:
-    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+greeting:
+    type:     rest
+    resource: StendenINF1I\WaterupRestApiBundle\Controller\GreetingController

@@ -86,16 +86,35 @@ stof_doctrine_extensions:
             #softdeleteable: true # Add SoftDeletable extension for setting records non active without deleting them from the database.
             #uploadable: true # Add Uploadable extension for saving uploads like plant pictures.
 
-fos_oauth_server:
-    db_driver: orm
-    client_class:        StendenINF1I\WaterupRestApiBundle\Entity\Client
-    access_token_class:  StendenINF1I\WaterupRestApiBundle\Entity\AccessToken
-    refresh_token_class: StendenINF1I\WaterupRestApiBundle\Entity\RefreshToken
-    auth_code_class:     StendenINF1I\WaterupRestApiBundle\Entity\AuthCode
-    service:
-        user_provider: fos_user.user_manager
+#fos_oauth_server:
+#    db_driver: orm
+#    client_class:        StendenINF1I\WaterupRestApiBundle\Entity\Client
+#    access_token_class:  StendenINF1I\WaterupRestApiBundle\Entity\AccessToken
+#    refresh_token_class: StendenINF1I\WaterupRestApiBundle\Entity\RefreshToken
+#    auth_code_class:     StendenINF1I\WaterupRestApiBundle\Entity\AuthCode
+#    service:
+#        user_provider: fos_user.user_manager
 
-
+fos_rest:
+    disable_csrf_role: ROLE_API
+    param_fetcher_listener: true
+    body_listener: true
+    allowed_methods_listener: true
+    unauthorized_challenge: "Basic realm=\"Restricted Area\""
+    access_denied_listener:
+        json: true
+        xml: true
+        html: true
+    view:
+        view_response_listener: force
+        force_redirects:
+          html: true
+        formats:
+            json: true
+            xml: true
+    format_listener:
+        rules:
+            - { path: ^/, priorities: [ json, xml ], fallback_format: json, prefer_extension: true }
 
 # Swiftmailer Configuration
 swiftmailer:

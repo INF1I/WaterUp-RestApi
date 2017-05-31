@@ -1,0 +1,10 @@
+StendenINF1I\WaterupRestApiBundle\Entity\AppClient:
+    type: entity
+    table: null
+    repositoryClass: StendenINF1I\WaterupRestApiBundle\Repository\AppClientRepository
+    id:
+        id:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }
