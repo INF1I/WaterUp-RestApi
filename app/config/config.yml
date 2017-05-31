@@ -1,0 +1,107 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+framework:
+    #esi: ~
+    #translator: { fallbacks: ['%locale%'] }
+    translator:      { fallback: "%locale%" }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+
+    orm:
+        entity_managers:
+            default:
+                filters:
+                    softdeleteable:
+                        class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                        enabled: true
+   # orm:
+      #  auto_generate_proxy_classes: '%kernel.debug%'
+        #naming_strategy: doctrine.orm.naming_strategy.underscore
+        #auto_mapping: true
+     #   entity_managers:
+      #      default:
+      #          filters:
+      #              softdeleteable:
+         #           class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+         #           enabled: true
+stof_doctrine_extensions:
+    default_locale: en_US
+    # Only used if you activated the Uploadable extension
+    uploadable:
+        # Default file path: This is one of the three ways you can configure the path for the Uploadable extension
+        default_file_path:       "%kernel.root_dir%/../web/uploads"
+
+        # Mime type guesser class: Optional. By default, we provide an adapter for the one present in the HttpFoundation component of Symfony
+        mime_type_guesser_class: Stof\DoctrineExtensionsBundle\Uploadable\MimeTypeGuesserAdapter
+
+        # Default file info class implementing FileInfoInterface: Optional. By default we provide a class which is prepared to receive an UploadedFile instance.
+        default_file_info_class: Stof\DoctrineExtensionsBundle\Uploadable\UploadedFileInfo
+    orm:
+        default:
+            #timestampable: true # Add doctrine TimeStampable extension for automatic updating times stamps on create and update events.
+            #blamable: true # Add doctrine Blamable extension for automatic updating values on create, delete, update and column value change events.
+            #softdeleteable: true # Add SoftDeletable extension for setting records non active without deleting them from the database.
+            #uploadable: true # Add Uploadable extension for saving uploads like plant pictures.
+
+fos_oauth_server:
+    db_driver: orm
+    client_class:        StendenINF1I\WaterupRestApiBundle\Entity\Client
+    access_token_class:  StendenINF1I\WaterupRestApiBundle\Entity\AccessToken
+    refresh_token_class: StendenINF1I\WaterupRestApiBundle\Entity\RefreshToken
+    auth_code_class:     StendenINF1I\WaterupRestApiBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager
+
+
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+# app/config/config.yml
