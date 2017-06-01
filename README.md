@@ -1,4 +1,7 @@
 # WaterUp - Server API
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/956ba2bc059b440b99c9eeb3f47d87eb)](https://www.codacy.com/app/jorisrietveld/WaterUpRestApi?utm_source=github.com&utm_medium=referral&utm_content=INF1I/WaterUpRestApi&utm_campaign=badger)
+
 ![PHP version](https://img.shields.io/badge/PHP%20version-7.1-brightgreen.svg)<br/>
 We are developing an internet of things device as part of the project
 innovate at Stenden University of applied sciences. In this project
