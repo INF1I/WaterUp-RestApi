@@ -1,7 +1,13 @@
 security:
+    encoders:
+        RestBundle\Entity\Pot:
+            algorithm: bcrypt
+
     providers:
-        in_memory:
-            memory: ~
+        plant_pot_provider:
+            entiry:
+                class: RestBundle:Pot
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

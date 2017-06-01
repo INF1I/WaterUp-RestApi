@@ -1,3 +1,7 @@
 rest_homepage:
     path:     /
     defaults: { _controller: RestBundle:Default:index }
+
+token-authentication:
+    path: /token-authentication
+    defaults: { _controller: RestBundle:Authentication:tokenAuthentication}
