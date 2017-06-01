@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace RestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -30,10 +31,26 @@ class Plant
     protected $moisterNeed;
     protected $dutchName;
     protected $description;
-    protected $preferedLowerTemerature;
-    protected $preferedUpperTemteratue;
-    protected $preferedLuminosity;
+    protected $preferredLowerTemperature;
+    protected $preferredUpperTemperate;
+    protected $preferredLuminosity;
+
+    /**
+     * This column holds the date the record was created.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_added", type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
     protected $dateAdded;
+
+    /**
+     * This column holds the timestamp of last update of the record.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_updated", type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
     protected $dateUpdated;
 
     /**

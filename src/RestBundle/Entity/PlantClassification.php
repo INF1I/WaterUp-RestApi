@@ -26,8 +26,11 @@ class PlantClassification
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
     protected $plant;
+
     protected $classificationResult;
+
     protected $certainty;
 
     /**

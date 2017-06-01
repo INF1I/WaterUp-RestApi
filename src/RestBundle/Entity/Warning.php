@@ -26,7 +26,9 @@ class Warning
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    protected $potStateId;
+
+    protected $potState;
+
     protected $type;
 
     /**

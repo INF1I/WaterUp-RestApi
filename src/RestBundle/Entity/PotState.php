@@ -26,10 +26,15 @@ class PotState
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
     protected $potId;
+
     protected $plantId;
+
     protected $waterLevel;
+
     protected $soilMoisture;
+
     protected $dateMeasurement;
 
     /**

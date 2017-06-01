@@ -36,5 +36,13 @@ class ClientPot
     protected $client;
     protected $pot;
     protected $coupleDate;
+
+    /**
+     * This column holds the timestamp of the date the record was soft deleted. The record will still exist in the
+     * database but marked as unactive.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_removed", type="datetime", nullable=true)
+     */
     protected $dateRemoved;
 }

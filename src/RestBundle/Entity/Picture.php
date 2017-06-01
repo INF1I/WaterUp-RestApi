@@ -27,13 +27,21 @@ class Picture
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
     protected $clientPot;
+
     protected $dateTaken;
+
     protected $path;
+
     protected $fileName;
+
     protected $mimeType;
+
     protected $size;
+
     protected $dateClassified;
+
     protected $classifiedAsPlant;
 
     /**
