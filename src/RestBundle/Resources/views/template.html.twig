@@ -1,0 +1,69 @@
+{#
+ # Author: Joris Rieveld <jorisrietveld@gmail.com>
+ # Created: 01-06-2017 05:43
+ # licence: GPLv3 General Public Licence Version 3
+ #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>INF1I WaterUp API</title>
+
+    {# All the stylesheeds like bootstrap and the bundle's custom styles. #}
+    {% stylesheets 'assets/vendor/bootstrap/dist/css/bootstrap.min.css' '@RestBundle/Resources/public/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+</head>
+
+<body>
+
+<div class="site-wrapper">
+
+    {% block siteWrapper %}
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+
+                {% block coverNavigation %}
+                    <div class="masthead clearfix">
+                        <div class="inner">
+                            <h3 class="masthead-brand">{% block navigationBrand %}WaterUp API{% endblock %}</h3>
+                            <nav class="nav nav-masthead">
+                                {% block navigationPrependLinks %}{% endblock %}
+                                {% block navigationOverrideLinks %}
+                                    <a class="nav-link active" href="#">INF1I Website</a>
+                                    <a class="nav-link" href="#">Source Code</a>
+                                    <a class="nav-link" href="#">Api documentation</a>
+                                {% endblock %}
+                                {% block navigationAppendLinks %}{% endblock %}
+                            </nav>
+                        </div>
+                    </div>
+                {% endblock %}
+
+                {% block coverPageContent %}
+                    {% block coverContent %}
+                    {% endblock %}
+
+                    {% block coverFooter %}
+                    {% endblock %}
+                {% endblock %}
+
+            </div>
+
+        </div>
+    {% endblock %}
+
+</div>
+{# All the javascript files like bootstrap, jquery and the bundle's scripts#}
+{% javascripts 'assets/vendor/jquery/dist/jquery.min.js' 'assets/vendor/tether/dist/js/tether.min.js' 'assets/vendor/bootstrap/dist/js/bootstrap.min.js' '@RestBundle/Resources/public/js/*' %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+</body>
+</html>

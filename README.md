@@ -1,8 +1,11 @@
-# WaterUp - Server API
+# WaterUp - Server REST API
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/956ba2bc059b440b99c9eeb3f47d87eb)](https://www.codacy.com/app/jorisrietveld/WaterUpRestApi?utm_source=github.com&utm_medium=referral&utm_content=INF1I/WaterUpRestApi&utm_campaign=badger) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/INF1I/WaterUpRestApi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/INF1I/WaterUpRestApi/?branch=master) ![PHP version](https://img.shields.io/badge/PHP%20version-7.1-brightgreen.svg)<br/>
+This repository contains the source code of the backend API providing statistics, warnings and
+plant clarification to the mobile application. The api will be used by the app to identify a plant
+species based on an photo and stores MQTT messages send by the app and plant pot.
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/956ba2bc059b440b99c9eeb3f47d87eb)](https://www.codacy.com/app/jorisrietveld/WaterUpRestApi?utm_source=github.com&utm_medium=referral&utm_content=INF1I/WaterUpRestApi&utm_campaign=badger)
 
-![PHP version](https://img.shields.io/badge/PHP%20version-7.1-brightgreen.svg)<br/>
+## About this project
 We are developing an internet of things device as part of the project
 innovate at Stenden University of applied sciences. In this project
 we are free to develop an product based on the internet of things.
@@ -21,10 +24,14 @@ will also be used to configure the right plant species by taking an
 picture of the plant, and let machine learning classify the species.
 
 ## Documentation
-There is documentation available for the API usage [here](Documantation/README.md)
+There is documentation available about configuring an development
+environment, API usage and the server configuration.You can find
+it [here](documentation/readme.md). If your having any trouble
+setting up your development environment, API usage, server configuration
+or have some suggestions please submit an [issue here](https://github.com/INF1I/WaterUp-RestApi/issues/new).
 
 ## Live version
-You can view an live version of the API at [https://api.inf1i.ga/](https://api.inf1i.ga/).
+You can view an live version of the REST API at [https://api.inf1i.ga/](https://api.inf1i.ga/).
 
 ## Repository Authors
 Joris Rietveld - jorisrietveld@gmail.com<br>

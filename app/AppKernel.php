@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new \JMS\SerializerBundle\JMSSerializerBundle(),
             // This bundle includes tools for generating api documentation.
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

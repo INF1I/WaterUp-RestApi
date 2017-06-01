@@ -1,1 +1,21 @@
-Hello World!
+{% extends 'RestBundle::template.html.twig' %}
+
+{% block coverPageContent %}
+    {% block coverContent %}
+        <div class="inner cover">
+            <h1 class="cover-heading">{ INF1I WaterUp API }</h1>
+            <p class="lead">Welcome at the INF1I WaterUp API on this domain you can use the WaterUp Backend resources like statisics, plant spiecies information and more.</p>
+            <p class="lead">
+                <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+            </p>
+        </div>
+    {% endblock %}
+
+    {% block coverFooter %}
+        <div class="mastfoot">
+            <div class="inner">
+                <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

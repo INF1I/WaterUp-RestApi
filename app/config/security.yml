@@ -4,10 +4,12 @@ security:
             algorithm: bcrypt
 
     providers:
-        plant_pot_provider:
-            entiry:
-                class: RestBundle:Pot
-                property: username
+        #plant_pot_provider:
+        #    entiry:
+        #        class: RestBundle:Pot
+        #        property: username
+         in_memory:
+                    memory: ~
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

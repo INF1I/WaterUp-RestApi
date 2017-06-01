@@ -8,6 +8,9 @@ declare(strict_types=1);
 
 namespace RestBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -26,13 +29,65 @@ class Pot implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * This attribute holds the unique manufacture a code of the network chip in the plant pot.
+     *
+     * @var string
+     * @ORM\Column(type="string", name="pot_mac_address", length=17 )
+     */
     protected $potMacAddress;
+
+    /**
+     * This atribute holds an hash of the uniquely generated code that is generated for each pot.
+     *
+     * @var string
+     * @ORM\Column(type="string", name="pot_unique_hash", length=255)
+     */
     protected $potUniqueHash;
+
+    /**
+     * This attribute temporarly stores the uniquely generated code that is generated for each pot
+     * to compare it with the hash stored in the database.
+     *
+     * @var string
+     */
     protected $plainPassword;
+
+    /**
+     * This attribute holds the pot's manufacture date. That is the date the pot was registered in the
+     * database after manufacturing.
+     *
+     * @var \DateTime
+     * @ORM\Column(type="datetime", name="registration_date")
+     * @Gedmo\Timestampable(on="create")
+     */
     protected $registrationDate;
+
+    /**
+     * This attribute holds the date of the first use of the pot (when the app calls the API and tries to authenticate
+     * with the pot's mac address and unieque generated code.
+     *
+     * @var \DateTime
+     * @ORM\Column(type="datetime", name="activation_date", nullable=true )
+     */
     protected $activationDate;
+
+    /**
+     * This column holds the timestamp of the date the record was soft deleted. The record will still exist in the
+     * database but marked as unactive.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_removed", type="datetime", nullable=true)
+     */
     protected $dateRemoved;
 
+    /**
+     * This attribute holds the password encoder that will be used for encoding (hashing) the
+     * uniquely generated code that is generated for each pot.
+     *
+     * @var PasswordEncoderInterface
+     */
     protected $passwordEncoder;
 
     /**
@@ -57,6 +112,7 @@ class Pot implements UserInterface, \Serializable
 
     /**
      * This method returns null because
+     *
      * @return string|null The salt
      */
     public function getSalt()
@@ -90,6 +146,12 @@ class Pot implements UserInterface, \Serializable
         $this->plainPassword = null;
     }
 
+    /**
+     * Implemented from the \Serializable interface. It serializes the non sensetive attributes of
+     * this entity.
+     *
+     * @return string
+     */
     public function serialize()
     {
         return serialize([
@@ -102,6 +164,11 @@ class Pot implements UserInterface, \Serializable
         ]);
     }
 
+    /**
+     * Implemented from the \Serializable interface. It deserializes entity string to an Pot entity object.
+     *
+     * @param string $serialized
+     */
     public function unserialize($serialized)
     {
         list (
@@ -111,7 +178,7 @@ class Pot implements UserInterface, \Serializable
             $this->registrationDate,
             $this->activationDate,
             $this->dateRemoved,
-            ) = unserialize($serialized);
+            ) = unserialize($serialized, __CLASS__ );
     }
 
 

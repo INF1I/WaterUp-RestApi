@@ -35,7 +35,7 @@ class Client
      * This column holds the platform name of the device it could be something like: Android, BlackBerry 10, iOS.
      *
      * @var string
-     * @ORM\Column(name="device_platform", type="string")
+     * @ORM\Column(name="device_platform", type="string", length=50)
      */
     protected $devicePlatform;
 
@@ -44,7 +44,7 @@ class Client
      * like: 4.3, 4.4 or 4.4-update1.
      *
      * @var string
-     * @ORM\Column(name="device_platform_version", type="string")
+     * @ORM\Column(name="device_platform_version", type="string", length=50)
      */
     protected $devicePlatformVersion;
 
@@ -52,7 +52,7 @@ class Client
      * This column holds the model name of the device like iPhone 5 or Passion.
      *
      * @var string
-     * @ORM\Column(name="device_model", type="string")
+     * @ORM\Column(name="device_model", type="string", length=50)
      */
     protected $deviceModel;
 
@@ -60,7 +60,7 @@ class Client
      * This column holds the name of the device's manufacturer like motorola, apple.
      *
      * @var string
-     * @ORM\Column(name="device_manufacturer", type="string")
+     * @ORM\Column(name="device_manufacturer", type="string", length=50)
      */
     protected $deviceManufacturer;
 
@@ -96,7 +96,7 @@ class Client
      *
      * @return string
      */
-    public function getUUID()
+    public function getUUID(): string
     {
         return $this->UUID;
     }
@@ -106,7 +106,7 @@ class Client
      *
      * @param string $UUID
      */
-    public function setUUID($UUID)
+    public function setUUID(string $UUID): void
     {
         $this->UUID = $UUID;
     }
@@ -114,9 +114,9 @@ class Client
     /**
      * This method gets the Id property.
      *
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -124,9 +124,9 @@ class Client
     /**
      * This method sets the id property.
      *
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
@@ -136,7 +136,7 @@ class Client
      *
      * @return string
      */
-    public function getDevicePlatform()
+    public function getDevicePlatform(): string
     {
         return $this->devicePlatform;
     }
@@ -146,7 +146,7 @@ class Client
      *
      * @param string $devicePlatform
      */
-    public function setDevicePlatform($devicePlatform)
+    public function setDevicePlatform(string $devicePlatform): void
     {
         $this->devicePlatform = $devicePlatform;
     }
@@ -154,9 +154,9 @@ class Client
     /**
      * This method gets the DevicePlatformVersion property.
      *
-     * @return mixed
+     * @return string
      */
-    public function getDevicePlatformVersion()
+    public function getDevicePlatformVersion(): string
     {
         return $this->devicePlatformVersion;
     }
@@ -164,9 +164,9 @@ class Client
     /**
      * This method sets the devicePlatformVersion property.
      *
-     * @param mixed $devicePlatformVersion
+     * @param string $devicePlatformVersion
      */
-    public function setDevicePlatformVersion($devicePlatformVersion)
+    public function setDevicePlatformVersion(string $devicePlatformVersion): string
     {
         $this->devicePlatformVersion = $devicePlatformVersion;
     }
@@ -174,9 +174,9 @@ class Client
     /**
      * This method gets the DeviceModel property.
      *
-     * @return mixed
+     * @return string
      */
-    public function getDeviceModel()
+    public function getDeviceModel(): string
     {
         return $this->deviceModel;
     }
@@ -184,9 +184,9 @@ class Client
     /**
      * This method sets the deviceModel property.
      *
-     * @param mixed $deviceModel
+     * @param string $deviceModel
      */
-    public function setDeviceModel($deviceModel)
+    public function setDeviceModel(string $deviceModel): void
     {
         $this->deviceModel = $deviceModel;
     }
@@ -194,9 +194,9 @@ class Client
     /**
      * This method gets the DeviceManufacturer property.
      *
-     * @return mixed
+     * @return string
      */
-    public function getDeviceManufacturer()
+    public function getDeviceManufacturer(): string
     {
         return $this->deviceManufacturer;
     }
@@ -204,9 +204,9 @@ class Client
     /**
      * This method sets the deviceManufacturer property.
      *
-     * @param mixed $deviceManufacturer
+     * @param string $deviceManufacturer
      */
-    public function setDeviceManufacturer($deviceManufacturer)
+    public function setDeviceManufacturer(string $deviceManufacturer): void
     {
         $this->deviceManufacturer = $deviceManufacturer;
     }
@@ -216,7 +216,7 @@ class Client
      *
      * @return \DateTime
      */
-    public function getRegistrationDate()
+    public function getRegistrationDate(): \DateTime
     {
         return $this->registrationDate;
     }
@@ -226,7 +226,7 @@ class Client
      *
      * @param \DateTime $registrationDate
      */
-    public function setRegistrationDate($registrationDate)
+    public function setRegistrationDate( \DateTime $registrationDate) : void
     {
         $this->registrationDate = $registrationDate;
     }
@@ -234,9 +234,9 @@ class Client
     /**
      * This method gets the LastActive property.
      *
-     * @return mixed
+     * @return \DateTime
      */
-    public function getLastActive()
+    public function getLastActive() : \DateTime
     {
         return $this->lastActive;
     }
@@ -244,9 +244,9 @@ class Client
     /**
      * This method sets the lastActive property.
      *
-     * @param mixed $lastActive
+     * @param \DateTime $lastActive
      */
-    public function setLastActive($lastActive)
+    public function setLastActive( \DateTime $lastActive) : void
     {
         $this->lastActive = $lastActive;
     }
@@ -254,9 +254,9 @@ class Client
     /**
      * This method gets the DateRemoved property.
      *
-     * @return mixed
+     * @return \DateTime
      */
-    public function getDateRemoved()
+    public function getDateRemoved() : \DateTime
     {
         return $this->dateRemoved;
     }
@@ -264,9 +264,9 @@ class Client
     /**
      * This method sets the dateRemoved property.
      *
-     * @param mixed $dateRemoved
+     * @param \DateTime $dateRemoved
      */
-    public function setDateRemoved($dateRemoved)
+    public function setDateRemoved( \DateTime $dateRemoved )
     {
         $this->dateRemoved = $dateRemoved;
     }

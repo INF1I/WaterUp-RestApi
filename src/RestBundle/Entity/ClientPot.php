@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace RestBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="ClientPot")
@@ -24,6 +26,13 @@ class ClientPot
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     *
+     * @var
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="RestBundle\Entity\Client")
+     */
     protected $client;
     protected $pot;
     protected $coupleDate;

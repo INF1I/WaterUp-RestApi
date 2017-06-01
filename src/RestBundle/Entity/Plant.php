@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace RestBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="Plant")
@@ -33,5 +35,13 @@ class Plant
     protected $preferedLuminosity;
     protected $dateAdded;
     protected $dateUpdated;
+
+    /**
+     * This column holds the timestamp of the date the record was soft deleted. The record will still exist in the
+     * database but marked as unactive.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_removed", type="datetime", nullable=true)
+     */
     protected $dateRemoved;
 }
