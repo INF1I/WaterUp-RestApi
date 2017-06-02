@@ -37,6 +37,7 @@ class Warning
      *
      * @var \DateTime
      * @ORM\Column(name="date_removed", type="datetime", nullable=true)
+     *
      */
     protected $dateRemoved;
 }
