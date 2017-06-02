@@ -20,3 +20,4 @@
 
 var/jwt/
 var/jwt/*
+php.ini
