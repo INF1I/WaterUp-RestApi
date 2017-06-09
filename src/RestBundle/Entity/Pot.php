@@ -180,6 +180,4 @@ class Pot implements UserInterface, \Serializable
             $this->dateRemoved,
             ) = unserialize($serialized, __CLASS__);
     }
-
-
 }

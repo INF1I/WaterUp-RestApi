@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace RestBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
+use \Doctrine\ORM\Mapping as ORM;
+use \Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity

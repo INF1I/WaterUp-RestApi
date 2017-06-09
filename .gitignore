@@ -17,7 +17,7 @@
 /web/bundles/
 
 .idea/
-
+Backup/
 var/jwt/
 var/jwt/*
 php.ini
