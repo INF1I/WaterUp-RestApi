@@ -9,6 +9,8 @@ declare(strict_types=1);
 namespace RestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity
@@ -28,13 +30,27 @@ class ClientPot
     protected $id;
 
     /**
-     *
-     * @var
+     * This column holds an reference to the unique identifier of the client entity.
+     * @var int
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      * @ORM\OneToMany(targetEntity="RestBundle\Entity\Client")
      */
     protected $client;
+
+    /**
+     * This column holds an reference to the unique identifier of the pot entity.
+     * @var int
+     * @ORM\JoinColumn(name="pot_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="RestBundle\Entity\Pot")
+     */
     protected $pot;
+
+    /**
+     * This column holds the date the client was coupled to an plant pot.
+     * @var DateTime
+     * @ORM\Column(name="couple_date", type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
     protected $coupleDate;
 
     /**

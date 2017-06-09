@@ -27,10 +27,19 @@ class PlantClassification
      */
     protected $id;
 
+    /**
+     * @var
+     */
     protected $plant;
 
+    /**
+     * @var
+     */
     protected $classificationResult;
 
+    /**
+     * @var
+     */
     protected $certainty;
 
     /**

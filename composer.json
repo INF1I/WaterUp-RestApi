@@ -1,5 +1,6 @@
 {
-    "name": "StendenInf1i/wateruprestapi",
+    "name": "Stenden-inf1i/wateruprestapi",
+    "description": "This project is for connecting the backend server with the mobile app.",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -36,7 +37,7 @@
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
-        "symfony/symfony": "3.3.*",
+        "symfony/symfony": "v3.3.2",
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {

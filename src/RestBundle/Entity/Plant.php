@@ -27,6 +27,10 @@ class Plant
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var
+     */
     protected $name;
     protected $moisterNeed;
     protected $dutchName;

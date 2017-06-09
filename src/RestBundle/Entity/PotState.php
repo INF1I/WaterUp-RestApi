@@ -27,14 +27,29 @@ class PotState
      */
     protected $id;
 
+    /**
+     * @var
+     */
     protected $potId;
 
+    /**
+     * @var
+     */
     protected $plantId;
 
+    /**
+     * @var
+     */
     protected $waterLevel;
 
+    /**
+     * @var
+     */
     protected $soilMoisture;
 
+    /**
+     * @var
+     */
     protected $dateMeasurement;
 
     /**

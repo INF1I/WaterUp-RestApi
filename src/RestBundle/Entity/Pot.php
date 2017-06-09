@@ -178,7 +178,7 @@ class Pot implements UserInterface, \Serializable
             $this->registrationDate,
             $this->activationDate,
             $this->dateRemoved,
-            ) = unserialize($serialized, __CLASS__ );
+            ) = unserialize($serialized, __CLASS__);
     }
 
 

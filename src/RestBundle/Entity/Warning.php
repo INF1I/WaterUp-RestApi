@@ -27,8 +27,14 @@ class Warning
      */
     protected $id;
 
+    /**
+     * This column holds an rel
+     */
     protected $potState;
 
+    /**
+     * @var
+     */
     protected $type;
 
     /**

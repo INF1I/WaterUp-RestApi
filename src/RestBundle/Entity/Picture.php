@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace RestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -28,20 +29,75 @@ class Picture
      */
     protected $id;
 
+    /**
+     * This column holds an reference to the unique identifier of the ClientPot entity.
+     *
+     * @var int
+     * @ORM\JoinColumn(name="client_pot_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="RestBundle\Entity\ClientPot")
+     */
     protected $clientPot;
 
+    /**
+     * This column holds the date the picture was taken.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_taken", type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
     protected $dateTaken;
 
+    /**
+     * This column holds the path where the photo is saved.
+     *
+     * @var string
+     * @ORM\Column(name="path", type="string", length=255)
+     * @Gedmo\UploadableFilePath
+     */
     protected $path;
 
+    /**
+     * This column holds the file name of the photo.
+     *
+     * @var string
+     * @ORM\Column(name="file_name", type="string", length=255)
+     * @Gedmo\UploadableFileName
+     */
     protected $fileName;
 
+    /**
+     * This column holds the mime type of the photo.
+     *
+     * @var string
+     * @ORM\Column(name="mime_type", type="string", length=255, nullable=true )
+     * @Gedmo\UploadableFileMimeType
+     */
     protected $mimeType;
 
+    /**
+     * This column holds the file size of the photo.
+     *
+     * @var string
+     * @ORM\Column(name="size", type="string", length=50, nullable=true )
+     * @Gedmo\UploadableFileSize
+     */
     protected $size;
 
+    /**
+     * This column holds the date the picture was classified.
+     *
+     * @var \DateTime
+     * @ORM\Column(name="date_classified", type="datetime")
+     */
     protected $dateClassified;
 
+    /**
+     * This column holds the id of the plant that the picture was classified as.
+     *
+     * @var int
+     * @ORM\JoinColumn(name="clasified_as_plant_id", referencedColumnName="id", nullable=true)
+     * @ORM\ManyToOne(targetEntity="RestBundle\Entity\Plant")
+     */
     protected $classifiedAsPlant;
 
     /**
