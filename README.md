@@ -1,3 +1,5 @@
+# Wordt verwijderd
+Ik ga deze repo en organisatie verwijderen. Mocht je belang bij de code hebben, download die dan.
 # WaterUp - Server REST API
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/956ba2bc059b440b99c9eeb3f47d87eb)](https://www.codacy.com/app/jorisrietveld/WaterUpRestApi?utm_source=github.com&utm_medium=referral&utm_content=INF1I/WaterUpRestApi&utm_campaign=badger) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/INF1I/WaterUpRestApi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/INF1I/WaterUpRestApi/?branch=master) ![PHP version](https://img.shields.io/badge/PHP%20version-7.1-brightgreen.svg) [![Dependency Status](https://gemnasium.com/badges/github.com/INF1I/WaterUpRestApi.svg)](https://gemnasium.com/github.com/INF1I/WaterUpRestApi) ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)<br/>
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/35029771-330a-4a72-aca2-c5cbddf57304/big.png)](https://insight.sensiolabs.com/projects/35029771-330a-4a72-aca2-c5cbddf57304)<br>
